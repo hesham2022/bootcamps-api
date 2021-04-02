@@ -9,16 +9,16 @@ const {
   bootcampPhotoUpload
 } = require('../controllers/bootcamp.js');
 
-const Bootcamp = require('../models/Bootcamp');
+const Bootcamp = require('../models/Bootcamp.js');
 
 // Include other resource routers
 const courseRouter = require('./course.js');
-const reviewRouter = require('./reviews');
+const reviewRouter = require('./reviews.js');
 
 const router = express.Router();
 
 const advancedResults = require('../middlewares/advancedResult.js');
-const { protect, authorize } = require('../middlewares/auth');
+const { protect, authorize } = require('../middlewares/auth.js');
 
 // Re-route into other resource routers
 router.use('/:bootcampId/courses', courseRouter);
