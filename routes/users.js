@@ -7,7 +7,7 @@ const {
   deleteUser
 } = require('../controllers/users');
 
-const User = require('../models/User');
+const User = require('../models/user');
 
 const router = express.Router({ mergeParams: true });
 

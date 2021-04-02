@@ -7,7 +7,7 @@ const {
   deleteReview
 } = require('../controllers/reviews');
 
-const Review = require('../models/Review');
+const Review = require('../models/review');
 
 const router = express.Router({ mergeParams: true });
 

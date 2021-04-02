@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const ErrorResponse = require('../utils/errorResponse.js');
 const asyncHandler = require('../middleware/async.js');
 const sendEmail = require('../utils/sendEmail.js');
-const User = require('../models/User.js');
+const User = require('../models/user.js');
 
 // @desc      Register user
 // @route     POST /api/v1/auth/register
