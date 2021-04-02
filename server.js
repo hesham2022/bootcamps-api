@@ -11,7 +11,7 @@ const xss = require('xss-clean');
 const rateLimit = require('express-rate-limit');
 const hpp = require('hpp');
 const cors = require('cors');
-const errorHandler = require('./middleware/error');
+const errorHandler = require('./middleware/error.js');
 const connectDB = require('./config/db');
 
 // Load env vars
