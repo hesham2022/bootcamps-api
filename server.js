@@ -11,7 +11,7 @@ const xss = require('xss-clean');
 const rateLimit = require('express-rate-limit');
 const hpp = require('hpp');
 const cors = require('cors');
-const errorHandler = require('./middlewares/error');
+const errorHandler = require('./middleware/error');
 const connectDB = require('./config/db');
 
 // Load env vars
@@ -21,10 +21,10 @@ dotenv.config({ path: './config/config.env' });
 connectDB();
 
 // Route files
-const bootcamps = require('./routes/bootcamp.js');
-const courses = require('./routes/course');
+const bootcamps = require('./routes/bootcamps');
+const courses = require('./routes/courses');
 const auth = require('./routes/auth');
-const users = require('./routes/user');
+const users = require('./routes/users');
 const reviews = require('./routes/reviews');
 
 const app = express();
@@ -37,7 +37,7 @@ app.use(cookieParser());
 
 // Dev logging middleware
 if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'));
+    app.use(morgan('dev'));
 }
 
 // File uploading
@@ -54,8 +54,8 @@ app.use(xss());
 
 // Rate limiting
 const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000, // 10 mins
-  max: 100
+    windowMs: 10 * 60 * 1000, // 10 mins
+    max: 100
 });
 app.use(limiter);
 
@@ -88,7 +88,7 @@ const server = app.listen(
 
 // Handle unhandled promise rejections
 process.on('unhandledRejection', (err, promise) => {
-  console.log(`Error: ${err.message}`.red);
-  // Close server & exit process
-  // server.close(() => process.exit(1));
+    console.log(`Error: ${err.message}`.red);
+    // Close server & exit process
+    // server.close(() => process.exit(1));
 });
