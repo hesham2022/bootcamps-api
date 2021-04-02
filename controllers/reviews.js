@@ -1,7 +1,7 @@
-const ErrorResponse = require('../utils/errorResponse');
-const asyncHandler = require('../middleware/async');
-const Review = require('../models/Review');
-const Bootcamp = require('../models/Bootcamp');
+const ErrorResponse = require('../utils/errorResponse.js');
+const asyncHandler = require('../middleware/async.js');
+const Review = require('../models/Review.js');
+const Bootcamp = require('../models/Bootcamp.js');
 
 // @desc      Get reviews
 // @route     GET /api/v1/reviews

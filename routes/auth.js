@@ -8,11 +8,11 @@ const {
   resetPassword,
   updateDetails,
   updatePassword
-} = require('../controllers/auth');
+} = require('../controllers/auth.js');
 
 const router = express.Router();
 
-const { protect } = require('../middleware/auth');
+const { protect } = require('../middleware/auth.js');
 
 router.post('/register', register);
 router.post('/login', login);

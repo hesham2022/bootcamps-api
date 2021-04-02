@@ -7,18 +7,18 @@ const {
   deleteBootcamp,
   getBootcampsInRadius,
   bootcampPhotoUpload
-} = require('../controllers/bootcamps');
+} = require('../controllers/bootcamps.js');
 
-const Bootcamp = require('../models/Bootcamp');
+const Bootcamp = require('../models/Bootcamp.js');
 
 // Include other resource routers
-const courseRouter = require('./courses');
-const reviewRouter = require('./reviews');
+const courseRouter = require('./courses.js');
+const reviewRouter = require('./reviews.js');
 
 const router = express.Router();
 
-const advancedResults = require('../middleware/advancedResults');
-const { protect, authorize } = require('../middleware/auth');
+const advancedResults = require('../middleware/advancedResults.js');
+const { protect, authorize } = require('../middleware/auth.js');
 
 // Re-route into other resource routers
 router.use('/:bootcampId/courses', courseRouter);
